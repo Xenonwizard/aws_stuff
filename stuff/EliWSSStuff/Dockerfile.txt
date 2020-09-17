@@ -1,0 +1,9 @@
+FROM amazonlinux:2
+
+COPY server .
+
+# Expose port 80 to the outside world
+EXPOSE 80
+
+# Command to run the executable
+CMD ["./server"]

@@ -1,0 +1,9 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:ap-southeast-1:710781057441:task-definition/TD2"
+        LoadBalancerInfo:
+          ContainerName: "con1"
+          ContainerPort: 80

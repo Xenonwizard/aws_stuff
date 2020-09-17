@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /home/ec2-user
+chmod +x server
+service docker start
+docker-compose up --scale web=10 -d

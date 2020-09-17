@@ -1,0 +1,31 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - yum install python3 pip3 -y
+      - pip3 install selenium
+      
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...          
+      - docker build -t server:latest .
+      - docker run -d -p 80:80 server
+      - python test.py
+      - docker tag server:latest $RESP
+  
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push $RESP
+      - printf '[{"name":"con1","imageUri":"%s"}]' $RESP > imagedefinitions.json
+      
+artifacts:
+  files: imagedefinitions.json

@@ -1,0 +1,38 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - yum install python3 pip -y
+      - pip3 install selenium
+      - yum install ruby -y
+      - wget https://aws-codedeploy-ap-southeast-1.s3.ap-southeast-1.amazonaws.com/latest/install
+      - chmod +x ./install
+      - ./install auto
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - $(aws ecr get-login --region ap-southeast-1 --no-include-email)
+      - IMAGE_TAG=latest
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t resp1:latest .
+      - docker run -d -p 80:80 resp1
+      - python test.py
+      - docker tag resp1:latest $RESP:$IMAGE_TAG
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker images...
+      - docker push $RESP:latest
+      - docker push $RESP:$IMAGE_TAG
+      - echo Writing image definitions file...
+      - printf '[{"name":"con1","imageUri":"%s"}]' $RESP:$IMAGE_TAG > imagedefinitions.json
+artifacts:
+    files: 
+      - imagedefinitions.json
+      - appspec.yml
+      - taskdef.json

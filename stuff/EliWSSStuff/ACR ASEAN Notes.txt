@@ -1,0 +1,19 @@
+http:ip-address/healthcheck
+set AWS_DEFAULT_REGION=us-east-1
+set AWS_ACCESS_KEY_ID=ASIA5OOWVQBRO5ZE5CLF
+set AWS_SECRET_ACCESS_KEY=Msw0vSE6/wCLOTm3ziMjSgiruq67zECUO9ditrFk
+set AWS_SESSION_TOKEN=FwoGZXIvYXdzEMn//////////wEaDAn/HanSYqxyjxCh+CKuAbPudy0CX8C+HMeWPhO3mgpaKhFUp7wFA+tFm/wHDAAo4d7GWsqGWyjISu282S1UvgpdWITFmvAtdcEPkJs+jHqCVh9b+GGtIjOyN1TDSHrmgOXAak7etHTcNvq8KVsLSb5rUx5zRVOXEfJwREYUgCcxaKTo3p0jA3nENh3/RN5/PKnNscRA+lRRVYsohckXo/PGRC/d2g65k2Zyc2mg1FwJ38MDa+VGZGGtsEsEWyirgaP1BTItoHP/CkOm+/QYXfa5iLwcDeEhAPXR5ef0mm0fuk1T98L/xISYc65k0Iv58wUN
+
+Things I learned:
+CloudFront Security
+Composite Alarm
+CloudFront Keep Alive Timeout
+How to connect elasticache without server.ini
+Containers Partitioning Maximum
+EFS
+NACL
+SG- configure with bastion
+Alarms
+
+
+US-East-1 Region

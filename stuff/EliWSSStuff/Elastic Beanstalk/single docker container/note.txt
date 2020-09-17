@@ -1,0 +1,1 @@
+ensure that u have granted your instance Amazon ECR registry read permissions
