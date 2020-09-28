@@ -1,0 +1,7 @@
+SELECT eventname,
+         eventtime
+FROM cloudtrail_logs_aws_cloudtrail_logs_710781057441_33bc6be3
+WHERE eventname LIKE '%Modify%'
+        OR eventname LIKE '%Delete%'
+        OR eventname LIKE '%Replace%'
+        OR eventname LIKE '%Associate%'

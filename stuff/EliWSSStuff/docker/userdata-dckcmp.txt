@@ -1,0 +1,8 @@
+#!/bin/bash
+service docker start
+cd /home/ec2-user
+mv daemon.json /etc/docker/daemon.json
+service docker restart
+chmod +x server
+docker-compose down
+docker-compose up --scale web=10 -d
