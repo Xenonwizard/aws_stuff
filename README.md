@@ -62,3 +62,26 @@ https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/single-container-docker-c
 **Golang Docker Hub**
 
 https://hub.docker.com/_/golang
+
+**Tabs to open**
+
+Cloud9
+
+Cloudformation
+
+CloudWatch
+
+Codepipeline
+
+EC2
+
+VPC
+
+ECR
+
+Cloudfront
+
+ELB
+
+TG
+
