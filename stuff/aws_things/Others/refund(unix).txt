@@ -1,0 +1,14 @@
+import json, os
+
+def lambda_handler(event, context):
+    
+    linux_command = '''curl -k -X POST -H "Content-Type: application/json" -d '{"player_id":"2II5FM3GUR","order_uuid":"''' + order_id + '''"}' https://gameday.begogreen.net/order'''
+    
+    print(linux_command)
+    
+    linux = os.popen(linux_command)
+    now = linux.read()
+    
+    print(now)
+
+    return None
