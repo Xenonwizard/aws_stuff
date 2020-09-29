@@ -1,4 +1,0 @@
-mysql -u admin -p heyhello123 database-1.c5wrkkxxblsv.ap-southeast-1.rds.amazonaws.com > CreateTable.sql
-stickiness
-cloudfront whitelisting
-encryption

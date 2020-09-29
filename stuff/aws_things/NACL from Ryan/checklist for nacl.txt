@@ -1,5 +1,0 @@
-checklist for nacl
-Load balancer
-Pipeline
-SSH
-CLOUD 9
